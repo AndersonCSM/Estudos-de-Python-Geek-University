@@ -83,4 +83,21 @@ nome = 'Angelina \n Julie'
 ou 
 nome = """ Angelina
 Julie"""
+
+# Tipo None
+
+O tipo de dado None em Python representa o tipo sem tipo, ou poderia
+ser conhecido também como tipo vazio, mas é recomendado falar que é um tipo sem tipo
+
+OBS: O tipo None é SEMPRE especificado com a primeira letra maiúscula.
+
+Certo: None
+Errado: none
+
+OBS: o tipo None é sempre considerado False no Python
+
+Quando utilizamos?
+- Utilizamos o None quando queremos iniciar um variável sem especificar um tipo de dado ou valor.
+
+numeros = None
 '''
