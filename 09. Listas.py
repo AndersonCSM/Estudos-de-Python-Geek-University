@@ -55,7 +55,7 @@ lista.append([4, 5, 10]) # Coloca a lista como um único elemento (sublista)
 # Adicionando diversos valores de uma lista à outra lista
 lista.extend([123, 44, 67]) # Coloca cada elemento da lista como um valor adicional a lista
 
-# Podemos inserir um novo elemento na lista infomrando a posição do índice
+# Podemos inserir um novo elemento na lista informando a posição do índice
 OBS: isso não substitui o valor ocupado pelo índice, o mesmo será deslocado para direita
 lista.insert(2, 'novo valor')
 print(lista)
