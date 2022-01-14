@@ -89,7 +89,7 @@ print(s)
 python = {'Ana','Pedro','Guilherme','Gustavo','João'}
 java = {'Fernanda','Gustavo','Ana','Henrique'}
 
-#União de dois conjuntos 
+# União de dois conjuntos 
 # Gerando um conjunto com nomes únicos dos estudantes, 
 
 # Forma 1 - Union(U) (Mais recomendado)
