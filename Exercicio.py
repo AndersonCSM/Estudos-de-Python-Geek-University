@@ -455,6 +455,128 @@ l2 = [1,6,8,0,9,8,5]
 v1 = set(l1)
 v2 = set(l2)
 print(v1 & v2)
-"""
 
 # questão 31
+l1 = [1,1,2,3,4,5,6,7]
+l2 = [1,6,8,0,9,8,5]
+
+v1 = set(l1)
+v2 = set(l2)
+print(v1 | v2)
+
+# questão 32
+l1 = [1,2,3,4,5]
+l2 = [6,7,8,0,9]
+soma, multi, dif = [], [], []
+for i in range(0,5):
+    soma.append(l1[i] + l2[i])
+    multi.append(l1[i] * l2[i]) 
+    dif.append(l1[i] - l2[i])
+
+l1set = set(l1)
+l2set = set(l2)
+
+print(f'''
+1º vetor: {l1}
+2º vetor:{l2}
+
+A soma dos vetores é: {soma}
+O produto dos vetores é: {multi}
+A diferença entre os vetores é {dif}
+A intersecção entre os elementos dos vetores é {l1set & l2set}
+A união entre os elementos dos vetores é {l1set | l2set}
+''')
+print('Não existe intersecção entre os vetores' if (l1set & l2set) == set() else f'A intersecção entre os elementos dos vetores é {l1set & l2set}')
+
+# questão 33
+from random import randint
+l1, l2 = [], []
+
+for c in range(0,15):
+    l1.append(randint(0,5))
+
+print(l1)
+
+for k, v in enumerate(l1):
+    if v != 0:
+        l2.append(v)
+    
+print(l2)
+
+# questão 34
+l1 = []
+c = 0
+while c != 15:
+    try:
+        v = int(input('Insira um valor para adicionarmos \n'))
+        if v not in l1:
+            l1.append(v)
+            c += 1
+        else:
+            print('Valor já existe, informe outro')
+    except:
+        print('valor inválido')
+
+print(l1)
+
+# questão 35: Falta de informação para concluir a questão
+
+# questão 36:
+lista = []
+try:
+    for c in range(0,10):
+        lista.append(float(input(f'Insira o {c+1}º valor \n')))  
+except:
+    print('Erro, insira um valor válido novamente')
+
+print(sorted(lista) )
+
+# questão 37:
+from random import randint
+
+lista, listaAN, listaPO = [], [], []
+for c in range(0,11):
+    lista.append(randint(0,22))
+
+for c in range(0,6):
+    listaAN.append(lista[c])
+for c in range(10,5,-1):
+    listaPO.append(lista[c]) 
+
+listaAN.sort()
+listaPO.sort(reverse=True)
+
+lista = listaAN+listaPO
+
+c = 0
+print(f'[ ', end='')
+for c in range(0,11):
+    if c < 5:
+        print(f'{lista[c]} < ', end='' )
+        c += 1
+    elif c != 10:
+        print(f'{lista[c]} > ', end='')
+        c += 1
+    else:
+        print(f'{lista[-1]}', end ='')
+print(' ]')
+
+# questão 38:
+lista = []
+for c in range(0,10):
+    lista.append(int(input('Insira valores númericos \n')))
+    print(sorted(lista))
+
+# questão 39:
+from math import factorial 
+n = 5
+for i in range(n): 
+    for j in range(n-i+1): 
+        print(end=" ") 
+  
+    for j in range(i+1): 
+        print(factorial(i)//(factorial(j)*factorial(i-j)), end=" ") 
+  
+    
+    print()
+"""
