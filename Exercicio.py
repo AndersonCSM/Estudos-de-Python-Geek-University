@@ -579,4 +579,260 @@ for i in range(n):
   
     
     print()
+
+# questão 40:
+from random import randint
+l, c, m = [], [], []
+for i in range(0,4):
+    for j in range(0,4):
+        c.append(randint(0,12))
+    l.append(c.copy())
+    c.clear()
+
+for i in range(0,4):
+    for j in range(0,4):
+        if l[i][j] >= 10:
+            m.append(l[i][j])
+        print(f'|{l[i][j]:>2}| ',end='')
+    print('')
+
+print(m)
+
+# questão 41:
+l, c = [], []
+for i in range(0,5):
+    for j in range(0,5):
+        if i == j:
+            c.append(1)
+        else:
+            c.append(0)
+    l.append(c.copy())
+    c.clear()
+
+for i in range(0,5):
+    for j in range(0,5):
+        print(f'|{l[i][j]}| ', end='')
+    print('')
+
+# questão 42:
+l, aux = [], []
+for i in range(1,6):
+    for j in range(1,6):
+        aux.append(i*j)
+    l.append(aux[:])
+    aux.clear()
+
+for i in range(0,5):
+    for j in range(0,5):
+        print(f'|{l[i][j]:>2}| ',end='')
+    print('')
+
+# questão 43(4):
+from random import randint
+
+l, aux, mai = [], [], []
+for i in range(0,5):
+    for j in range(0,5):
+        aux.append(randint(0,10))
+    l.append(aux.copy())
+    aux.clear()
+
+for i in range(0,5):
+    for j in range(0,5):
+        print(f'|{l[i][j]:>2}| ',end='')
+    print('')
+
+for i in range(0,5):
+        mai.append(max(l[i]))
+print('')
+print(mai)
+print(max(mai))
+
+# questão (5):
+from random import randint
+
+
+l, aux = [], []
+for i in range(0,5):
+    for j in range(0,5):
+        aux.append(randint(0,10))
+    l.append(aux.copy())
+    aux.clear()
+
+for i in range(0,5):
+    for j in range(0,5):
+        print(f'|{l[i][j]:>2}| ', end='')
+    print('')
+while True:
+    try:
+        x = int(input('Insira um número para buscarmos na matriz \n'))
+        for i in range(0,5):
+            for j in range(0,5):
+                if x == l[i][j]:
+                    print(f'O valor {x} está na linha {i+1}, coluna {j+1}')
+        break
+    except:
+        print('ERRO: o valor informado não é válido')
+
+# questão (6):
+from random import randint
+
+
+m1, m2, m3, aux1, aux2, aux3 = [], [], [], [], [], []
+
+for i in range(0,4):
+    for j in range(0,4):
+        aux1.append(randint(0,10))
+        aux2.append(randint(0,10))
+    m1.append(aux1.copy())
+    m2.append(aux2.copy())
+    aux1.clear()
+    aux2.clear()
+
+for i in range(0,4):
+    for j in range(0,4):
+        if m1[i][j] > m2[i][j]:
+            aux3.append(m1[i][j])
+        else:
+            aux3.append(m2[i][j])
+    m3.append(aux3.copy())
+    aux3.clear()
+
+for i in range(0,4):
+    for j in range(0,4):
+        print(f'|{m1[i][j]:>2}| ',end='')
+    print('')
+print('')
+
+for i in range(0,4):
+    for j in range(0,4):
+        print(f'|{m2[i][j]:>2}| ',end='')
+    print('')
+print('')
+
+for i in range(0,4):
+    for j in range(0,4):
+        print(f'|{m3[i][j]:>2}| ',end='')
+    print('')
+
+# questão (7):
+matrix, aux = [], []
+for i in range(1,11):
+    for j in range(1,11):
+        if i < j:
+            aux.append(2*i + 7*j - 2)
+        elif i == j:
+            aux.append(3*(i**2)-1)
+        else:
+            aux.append(4*(i**3)-5*(j**2)+1)
+    matrix.append(aux.copy())
+    aux.clear()
+
+for i in range(0,10):
+    for j in range(0,10):
+        print(f'|{matrix[i][j]:>4}| ',end='')
+    print('')
+
+# questão (8):
+from random import randint
+
+
+matrix, aux = [], []
+soma = 0
+for i in range(0,3):
+    for j in range(0,3):
+        aux.append(randint(0,10))
+    matrix.append(aux.copy())
+    aux.clear()
+
+for i in range(0,3):
+    for j in range(0,3):
+        print(f'|{matrix[i][j]:>2}| ', end='')
+    print('')
+
+for i in range(0,3):
+    for j in range(0,3):
+        if j > i:
+            soma += matrix[i][j]
+            
+print(soma)
+
+# questão (9):
+from random import randint
+
+
+matrix, aux = [], []
+soma = 0
+for i in range(0,3):
+    for j in range(0,3):
+        aux.append(randint(0,10))
+    matrix.append(aux.copy())
+    aux.clear()
+
+for i in range(0,3):
+    for j in range(0,3):
+        print(f'|{matrix[i][j]:>2}| ', end='')
+    print('')
+
+for i in range(0,3):
+    for j in range(0,3):
+        if j < i:
+            soma += matrix[i][j]
+
+print(soma)
+
+# questão (10):
+from random import randint
+
+
+matrix, aux = [], []
+soma = 0
+for i in range(0,3):
+    for j in range(0,3):
+        aux.append(randint(0,10))
+    matrix.append(aux.copy())
+    aux.clear()
+
+for i in range(0,3):
+    for j in range(0,3):
+        print(f'|{matrix[i][j]:>2}| ', end='')
+    print('')
+
+for i in range(0,3):
+    for j in range(0,3):
+        if j == i:
+            soma += matrix[i][j]
+
+print(soma)
+
 """
+
+# questão (11):
+
+# questão (12):
+
+# questão (13):
+
+# questão (14):
+
+# questão (15):
+
+# questão (16):
+
+# questão (17):
+
+# questão (18):
+
+# questão (19):
+
+# questão (20):
+
+# questão (21):
+
+# questão (22):
+
+# questão (23):
+
+# questão (24):
+
+# questão (25):
