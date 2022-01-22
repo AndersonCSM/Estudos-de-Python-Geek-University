@@ -805,19 +805,144 @@ for i in range(0,3):
 
 print(soma)
 
-"""
+# questão (11): Diagonal secundária
+matriz, aux = [], []
+soma = 0
+for i in range(0,3):
+    for j in range(0,3):
+        aux.append(i+j)
+    matriz.append(aux.copy())
+    aux.clear()
 
-# questão (11):
+for i in range(0,3):
+    soma = soma + matriz[i][(3-i-1)] #(3: linhas, i: iteráavel, -1, decréscio de ajuste)
+    for j in range(0,3):
+        print(f'{matriz[i][j]} ',end='')
+    print('')
+
+print(soma)
 
 # questão (12):
+matriz, aux = [], []
+
+for i in range(0,3):
+    for j in range(0,3):
+        aux.append(2*i+j-1)
+    matriz.append(aux.copy())
+    aux.clear()        
+
+for i in range(0,3):
+    for j in range(0,3):
+        print(f'{matriz[i][j]} ',end='')
+    print('')
+print('')
+for i in range(0,3):
+    for j in range(0,3):
+        print(f'{matriz[j][i]} ',end='')
+    print('')
 
 # questão (13):
+from random import randint
+
+
+matriz, aux = [], []
+for i in range(0,4):
+    for j in range(0,4):
+        aux.append(randint(0,20))
+    matriz.append(aux.copy())
+    aux.clear()
+
+for i in range(0,4):
+    for j in range(0,4):
+        print(f'[{matriz[i][j]:>2}] ',end='')
+    print('')
+print('')
+
+for i in range(0,4):
+    for j in range(0,4):
+        if j > i:
+            matriz[i][j]= 0
+
+for i in range(0,4):
+    for j in range(0,4):
+        print(f'[{matriz[i][j]:>2}] ',end='')
+    print('')
+print('')
 
 # questão (14):
+from random import randint
+
+
+x, c = 0, 0
+matriz, aux = [], []
+for i in range(0,4):
+    while c != 4:
+        x = randint(0,99)
+        if (x not in aux) and (x not in matriz):
+            aux.append(x)
+            c += 1
+    matriz.append(aux.copy())
+    aux.clear()
+    c = 0
+
+for i in range(0,4):
+    for j in range(0,4):
+        print(f'{matriz[i][j]:>2} ',end='')
+    print('')
+print('')
 
 # questão (15):
+import random
+
+
+aux, gabarito = [], ('a', 'b', 'c', 'd')
+
+alunos = {
+    'ana':[],
+    'beto':[],
+    'carlos':[],
+    'Lando':[],
+    'Isaias':[]
+}
+
+respostas = ('a', 'a', 'a', 'b', 'b', 'c', 'd', 'd', 'a', 'd')
+
+resultado = {
+    'ana':0,
+    'beto':0,
+    'carlos':0,
+    'Lando':0,
+    'Isaias':0
+}
+
+for i in alunos:
+    for j in range(0,10):
+        aux.append(random.choice(gabarito))
+    alunos.update({i: aux.copy()})
+    aux.clear()
+
+for i in alunos:
+    print(f'{i}: ',end='')
+    for j in range(0,10):
+        print(f'|{alunos[i][j]}| ',end='')
+    print('')
+print('')
+
+c = 0
+for i in resultado:
+    for j in range(0,10):
+        if respostas[j] == alunos[i][j]:
+            c += 1
+    resultado.update({i:c})
+    c = 0
+
+for i in resultado:
+    print(f'{i}: {resultado[i]} acertos')
+
+"""
 
 # questão (16):
+
 
 # questão (17):
 
