@@ -939,10 +939,7 @@ for i in resultado:
 for i in resultado:
     print(f'{i}: {resultado[i]} acertos')
 
-"""
-
 # questão (16):
-
 
 # questão (17):
 
@@ -955,9 +952,74 @@ for i in resultado:
 # questão (21):
 
 # questão (22):
+from random import randint
+
+def printer(lista):
+    for i in range(0,3):
+        for j in range(0,3):
+            print(f'|{lista[i][j]:>2}| ',end='')
+        print('')
+    print('')
+
+
+
+A, B, C, aux, aux2, aux3 = [], [], [], [], [], []
+
+for i in range(0,3):
+    for j in range(0,3):
+        aux.append(randint(0,10))
+        aux2.append(randint(0,10))
+    A.append(aux.copy())
+    B.append(aux2.copy())
+    aux.clear()
+    aux2.clear()
+ 
+for i in range(0,3):
+    for j in range(0,3):
+        aux3.append(A[i][j] * B[i][j])
+    C.append(aux3.copy())
+    aux3.clear()
+    
+printer(A)
+printer(B)
+printer(C)
 
 # questão (23):
+from random import randint
+
+
+A, B, aux = [], [], []
+
+def gerarM(matriz):
+    aux = []
+    for i in range(0,3):
+        for j in range(0,3):
+            aux.append(randint(0,10))
+        matriz.append(aux.copy())
+        aux.clear()
+
+
+
+def printer(lista):
+    for i in range(0,3):
+        for j in range(0,3):
+            print(f'|{lista[i][j]:>3}| ',end='')
+        print('')
+    print('')
+
+gerarM(A)
+
+for i in range(0,3):
+    for j in range(0,3):
+        aux.append(A[i][j] * A[j][i])
+    B.append(aux.copy())
+    aux.clear()
+
+
+printer(A)
+printer(B)
 
 # questão (24):
 
 # questão (25):
+"""
