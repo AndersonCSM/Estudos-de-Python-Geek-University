@@ -1022,4 +1022,238 @@ printer(B)
 # questão (24):
 
 # questão (25):
+
+# Seção 08
+
+# questão 1:
+def dobro(n=0):
+    return n * 2
+
+print(dobro(2))
+
+# questão 2:
+def data(dia='',mes='', ano=''):
+    meses = {1:'janeiro',2:'feveiro',3:'março',4:'abril'}
+    print(f'{dia} de {meses[int(mes)]} de {ano}')
+
+print(data(15,2,2002))
+
+# questão 3:
+def pos(n=0):
+    if n > 0:
+        return 1
+    return -1
+
+print(pos(-5))
+
+# questão 4:
+def quadrado(num=0):
+    c = int(num ** 1/2)
+    if c ** 2 == num:
+        return f'O número {num} é um quadrado perfeito'
+    return f'O número {num} não é um quadrado perfeito'
+
+print(quadrado(4))
+
+# questão 5:
+from math import pi
+
+
+def vol(r):
+    return f'O volume da esfera para o raio informado é {4/3 * pi * r:.2f}'
+
+print(vol(5))
+
+# questão 6:
+def tempo(h=0,m=0,s=0):
+    return f'O tempo em segundos corresponde a: {(h*3600)+(m*60)+s} segundos'
+
+print(tempo(h=1,m=20,s=3))
+
+# questão 7:
+
+# questão 8:
+
+# questão 9:
+
+# questão 10:
+
+# questão 11:
+def notas(num1=0, num2=0,num3=0, opc=''):
+    if opc =='A':
+        return num1+num2+num3/3
+    elif opc == 'P':
+        return num1*5+num2*3+num3*2/10
+    return f'Opção inválida, tente novamente'
+        
+print(notas(10,10,7, opc='P'))
+
+# questão 12:
+def leitura(inteiro=0):
+    soma = 0
+    for v in range(0, len(str(inteiro))):
+        try:
+            soma += int(v)
+        except:
+            continue 
+    return soma 
+
+print(leitura(102))
+
+# questão 13:
+
+# questão 14:
+
+# questão 15:
+
+# questão 16:
+
+# questão 17:
+def intervalo(a,b):
+    soma = 0
+    for c in range(a+1,b):
+            soma += c
+    return soma
+
+print(intervalo(5,9))
+
+# questão 18:
+
+# questão 19:
+
+# questão 20:
+
+# questão 21:
+
+# questão 22:
+def exclamacao(n=0):
+    m =1
+    for i in range(0, n): 
+        for j in range(0,m):
+            print('!', end='')  
+        print()
+        m +=1
+
+exclamacao(5)
+
+# questão 23:
+
+# questão 24:
+
+# questão 25:
+
+# questão 26:
+
+# questão 27:
+
+# questão 28:
+
+# questão 29:
+
+# questão 30:
+
+# questão 31:
+
+# questão 32:
+
+# questão 33:
+
+# questão 34:
+
+# questão 35:
+
+# questão 36:
+
+# questão 37:
+
+# questão 38:
+
+# questão 39:
+
+# questão 40:
+
+# questão 41:
+
+# questão 42:
+
+# questão 43:
+
+# questão 44:
+
+# questão 45:
+
+# questão 46:
+def printer(lista):
+    for k, v in enumerate(lista):
+        print(f'{v} ', end='')
+    print()
+    for v in range(len(lista),0,-1):
+        print(f'{v} ', end='')
+    print()      
+    print(f'{(len(lista)/sum(lista)):.2f}')
+lista = list(range(0,10))
+printer(lista)
+
+# questão 47:
+
+# questão 48:
+
+# questão 49:
+
+# questão 50:
+
+# questão 51:
+
+# questão 52:
+
+# questão 53:
+
+# questão 54:
+
+# questão 55:
+
+# questão 56:
+
+# questão 57:
+
+# questão 58:
+
+# questão 59:
+
+# questão 60:
+
+# questão 61:
+def anagrama(str1,str2):
+    for i in range(0,len(str1)):
+        if i == 0:
+            if str1[i] != str2[-1]:
+                return 'Não é um anagrama'
+        elif str1[i] != str2[-i]:
+            return 'Não é um anagrama'
+        return 'É um anagrama'
+
+print(anagrama('ana','ana'))
+
+# questão 62:
+
+# questão 63:
+
+# questão 64:
+
+# questão 65:
+
+# questão 66:
+
+# questão 67:
+
+# questão 68:
+
+# questão 69:
+
+# questão 70:
+
+# questão 71:
+
+# questão 72:
+
 """
