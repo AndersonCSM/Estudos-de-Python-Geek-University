@@ -270,4 +270,44 @@ nova.append(4)
 print(lista)
 print(nova)
 
+# Listas aninhadas
+- Algumas linguagens de programação C/Java possuem uma estrutura de dados chamadas de arrays:
+    - Unidimensionais (Arrays/Vetores)
+    - Multidimensionais (Matrizes)
+
+Em Python nós temos as Listas
+numeros = [1, 2, 3, 4, 5]
+
+Em Python uma matriz seria uma lista de listas:
+listas = [[1,2,3], [4,5,6], [7,8,9]] # Matriz 3x3
+print(listas)
+print(type(listas))
+
+# Como acessar os dados?
+print(lista[0]) # lista 0 == linha 0
+print(lista[0][1]) # lista 0, elemento 1 == linha 0, coluna 1
+
+# Interando com loops em uma lista aninhada
+listas = [[1,2,3], [4,5,6], [7,8,9]]
+
+def printer(lista):
+    for lista in listas:
+        for num in lista:
+            print(num)
+
+printer(listas)
+
+# Usando o List Comprehension
+[[print(valor) for valor in lista] for lista in listas]
+
+# Outro Exemplo
+
+# Gerando um tabuleiro/matrix 3x3
+tabuleiro = [[numero for numero in range(1,4)] for valor in range(1, 4)]
+print(tabuleiro)
+
+# Gerando jogadas para o jogo da velha
+velha = [['x' if numero % 2 == 0 else '0' for numero in range(1,4)] for valor in range(1,4)]
+print(velha)
 '''
+
