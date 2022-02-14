@@ -325,5 +325,202 @@ gen = ((x *10 for x in range(100)))
 
 for n in gen:
     print(n)
-'''
 
+### Sorted
+OBS: não confunda com a função sort(), o sort() só funciona em listas
+-Outra diferença entre sort() e sorted() é que o sort() modifica a lista. Já o sorted() retornar uma lista com os elementos ordenados
+-O sorted() funciona em qualquer iterável
+
+# Ex 01:
+numeros = [1,6,4,7]
+
+# Adicionando parâmetros ao sorted
+print(sorted(numeros, reverse=True)) # Ordena em ordem decrescente
+
+# EX 02: 
+usuarios = [
+    {'username': 'samuel', 'tweets': ['Eu adoro bolos', 'Eu adoro pizzas']},
+    {'username': 'carla', 'tweets': ['Eu amo gatos']},
+    {'username': 'jeff', 'tweets': []},
+    {'username': 'bob123', 'tweets': []},
+    {'username': 'doggo', 'tweets': ['Eu gosto de cachorros', 'Vou sair hoje']},
+    {'username': 'gal', 'tweets': []}
+    ]
+
+# Ordenando por username - Ordem alfabética inversa
+print(sorted(usuarios, key=lambda usuario: usuario['username'], reverse = True))
+
+# Ordenando pelo número de tweets
+print(sorted(usuarios, key=lambda usuario: len(usuario['tweets'])))
+
+# EX 03:
+musicas = [
+    {'título':'Thunderstruk', 'tocou':3},
+    {'título':'Dead Skin Mask', 'tocou':2},
+    {'título':'Back in Black', 'tocou':4},
+    {'título':'Ton old to rock in\' roll', 'tocou':32}
+]
+
+# Ordenando da menos tocada para a mais tocada
+print(sorted(musicas, key=lambda musica: musica['tocou']))
+
+# Ordenando da mais tocada pela menos tocada
+print(sorted(musicas, key=lambda musica: musica['tocou'], reverse = True))
+
+### Min e Max
+max() -> Retorna o maior valor em um iterável.
+min() -> Retorna o menor valor em um iterável.
+
+# EX 01:
+lista = [1, 8, 4, 99, 34, 129]
+print(max(lista))
+print(min(lista))
+
+tupla = (1, 8, 4, 99, 34, 129)
+print(max(tupla))
+print(min(tupla))
+
+conjunto = {1, 8, 4, 99, 34, 129}
+print(max(conjunto))
+print(min(conjunto))
+
+dicionario = {'a':1,'b': 8, 'c':4, 'd':99, 'e':34, 'f':129}
+print(max(dicionario.values()))
+print(min(dicionario.values()))
+
+# EX 02: comparação entre valores
+num1 = int(input())
+num2 = int(input())
+print(max(num1,num2))
+
+# Podemos repassar n valores:
+print(max(n1,n2,...,nn))
+
+# Ex 03: Podemos passar parâmetros de diferentes valores:
+print(max(4, 67, 54))
+
+print(max('a','ab','abc'))
+
+print(max('a','b','c','ç'))
+
+print(max(3.145, 5.789))
+
+print(max('Geek University'))
+
+# Ex 04:
+nomes = ['Arya', 'Samson', 'Dora', 'Tim', 'Ollivander']
+
+# O maior e menor valor será em relação a ordem alfabética
+print(max(nomes)) # Tim
+print(min(nomes)) # Arya
+
+print(max(nomes, key=lambda nome: len(nome))) # Ollivander
+print(min(nomes, key= lambda nome: len(nome))) # Tim
+
+# EX 05:
+musicas = [
+    {'título':'Thunderstruk', 'tocou':3},
+    {'título':'Dead Skin Mask', 'tocou':2},
+    {'título':'Back in Black', 'tocou':4},
+    {'título':'Ton old to rock in\' roll', 'tocou':32}
+]
+
+print(max(musicas, key=lambda musica: musica['tocou']))
+print(min(musicas, key= lambda musica: musica['tocou'])) 
+
+print(max(musicas, key=lambda musica: musica['tocou'])['título'])
+print(min(musicas, key= lambda musica: musica['tocou'])['título']) 
+
+
+### Reversed
+OBS: Não confundir com a função reserve() que só funciona nas listas.
+A funcão reversed() funciona com qualquer iterável
+Sua função é inverter o iterável.
+A função reversed() retorna um iterável chamado List Reverse Iterator
+
+# EX 01:
+lista = [1,2,3,4,5]
+res = reversed(lista)
+print(type(res))
+
+### len, abs, sum e round
+
+### len() -> retorna o tamanho (número de itens) em um iterável.
+# Por baixo dos panos, quando utilizamos a função len() o python faz o seguinte:
+# Dunder len
+print('Geek University'.__len__())
+
+### abs() -> Retorno o valor absoluto de um número inteiro ou real.
+EX:
+print(abs(-5))
+
+### sum() -> recebe como parâmetro um iterável, podendo receber um valor inicial, e retorna a soma total dos elementos, incluindo o valor inicial
+# OBS: o valor inicial default =0
+EX:
+print(sum([1, 2, 3, 4, 5]))
+print(sum([1,2,3,4,5],5)) # Repassado o valor inicial 5.
+
+### Round
+round() -> Retorna um número arredondado para n digitos de precisão após a casa decimal. Se a precisão não for informada retorna o inteiro mais próximo da entrada.
+EX:
+print(round(10.2))
+print(round(10.5))
+print(round(10.6))
+print(round(1.21212121, 2))
+print(round(1.219999,2))
+
+### Zip
+zip() -> Cria um iterável (zip object) que agrega elementos de cada um dos iteráveis passados como entrada em pares.
+# Assim como generators e outras funções, após a execução ele é apagado da memória
+# EX 01:
+lista1 = [1,2,3]
+lista2 = [4,5,6]
+
+zip1 =(lista1,lista2)
+
+print(zip1)
+print(type(zip1))
+
+# Sempre podemos gerar uma Lista, Tupla ou dicionário
+
+zip1 =(lista1,lista2)
+print(list(zip1))
+
+zip1 =(lista1,lista2)
+print(tuple(zip1))
+
+zip1 =(lista1,lista2)
+print(set(zip1))
+
+zip1 =(lista1,lista2)
+print(dict(zip1))
+
+EX 02:
+# OBS: O zip() utiliza parâmetros pareados, baseando-se na menor lista para gerar os pares, assim, se tiver uma lista maior
+do que as outras, os elementos desta serão descartados
+
+lista1 = [1,2,3]
+lista2 = [4,5,6]
+lista3 = [7,8,9,10,11]
+zip1 =(lista1,lista2,lista3)
+
+print(zip1)
+
+# EX 03: Utilizando iteráveis diferentes
+tupla = 1,2,3,4,5
+lista = [6,7,8,9,10]
+dicionario = {'a':11,'b':12,'c':13,'d':14,'e':15}
+print(list(zip(tupla, lista, dicionario.values())))
+
+# EX 04: Usando um desempacotador 
+dados = [{0,1},{2,3},{4,5},{6,7},{8,9}]
+print(list(zip(*dados)))
+
+# Ex 05: mais completo
+prova1 = [80, 91, 78]
+prova2 = [90, 89, 53]
+alunos = ['maria', 'pedro', 'carla']
+
+final = {dado[0]:max(dado[1], dado[2]) for dado in zip(alunos, prova1, prova2)}
+
+'''
