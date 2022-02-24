@@ -33,4 +33,7 @@ print('Seja bem-vindo(a) {0}'.format(nome))
 # Exemplo de print antigo da versão Python 2.0
 print('Seja bem-vindo(a) %s' % nome)
 print('A %s tem %s anos' % (nome, idade))
+
+# O ponto e vírgula no Python é usado para executar dois comandos ao mesmo tempo no python
+import pdb; pdb.set_trace()
 """
