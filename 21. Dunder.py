@@ -32,3 +32,6 @@ arquivo será o nome do arquivo.
 import primeiro, segundo
 
 """
+from sketchpy import library as lib
+obj = lib.rdj()
+obj.draw()
